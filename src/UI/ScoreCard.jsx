@@ -20,12 +20,12 @@ export default function ScoreCard(props) {
         </p>
       </div>
       <div className="flex justify-around w-full">
-        <div className="block p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 w-96 m-4 font-normal text-gray-700 dark:text-gray-400">
+        <div className="block p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 w-96 m-4 font-normal text-gray-700 dark:text-gray-400">
           <div>{teams[0].team.name}</div>
           <div>score: {teams[0].score}</div>
           <div>home: {teams[0].home.toString()}</div>
         </div>
-        <div className="block p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 w-96 m-4 font-normal text-gray-700 dark:text-gray-400">
+        <div className="block p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 w-96 m-4 font-normal text-gray-700 dark:text-gray-400">
           <div>{teams[1].team.name}</div>
           <div>score: {teams[1].score}</div>
           <div>home: {teams[1].home.toString()}</div>
