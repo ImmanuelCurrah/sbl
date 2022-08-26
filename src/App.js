@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react";
+import AllScores from "./components/scores/AllScores";
+import SearchFilter from "./components/searchFilters/SearchFilter";
+import { getAllScores } from "./routes/scoreRoutes";
 
 function App() {
+  const [scores, setScores] = useState(null);
+
+  useEffect(() => {
+    const fetchScores = async () => {
+      const allScores = await getAllScores();
+      setScores(allScores);
+    };
+    fetchScores();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="flex flex-col items-center bg-slate-800">
+      <SearchFilter setScores={setScores} />
+      <AllScores scores={scores} />
     </div>
   );
 }
